@@ -362,3 +362,9 @@ a:hover > h4{
 .footer {
 	padding: 20px 0 20px 0;
 }
+
+/*for backbone functionality*/
+
+.hidden {
+  display: none;
+}

@@ -1,4 +1,4 @@
-var stringObjects = [
+var stringKids = [
   {name: 'Andrew Wallace',
    intro: 'I own a technology consultation company that specializes in computer consulatation that covers purchasing, training, repairs, implementation, and upgrading. Additionally I was a multimedia specialist for Pearson Education doing on-set and on-location videography, photgraphy, post-production, and compression for the web.',
    portfolio: 'http://andrewgwallace.com',
@@ -19,9 +19,10 @@ var stringObjects = [
    github: 'https://github.com/cbajorin',
    twitter: 'http://www.twitter.com/',
    email: 'christopher.bajorin@gmail.com',
-   image: 'images/string/cropped/chris.jpg'},
+   image: 'images/string/cropped/chris.jpg'
+ },
   {name: 'Chris Lee',
-   intro: 'With a background in urban studies, I have always enjoyed engaging complex systematic problems. During my time at Warby Parker, I discovered the power of web applications and recognized programming as a place to apply my systematic thinking to interesting challenges.'
+   intro: 'With a background in urban studies, I have always enjoyed engaging complex systematic problems. During my time at Warby Parker, I discovered the power of web applications and recognized programming as a place to apply my systematic thinking to interesting challenges.',
    portfolio: 'http://www.christophermarklee.com',
    github: 'https://github.com/chrismlee',
    twitter: 'http://www.twitter.com/',
@@ -35,7 +36,7 @@ var stringObjects = [
    email: 'dara.mao@gmail.com',
    image: 'images/string/cropped/dara.jpg'},
   {name: 'David Montricher',
-   intro: 'I was an analyst in the consulting industry, a UN research assistant in Geneva and a junior-architect in Barcelona. I was facinated with Twitter and Airbnb, but I did not want to be a passive consumer. I wanted to make it big.'
+   intro: 'I was an analyst in the consulting industry, a UN research assistant in Geneva and a junior-architect in Barcelona. I was facinated with Twitter and Airbnb, but I did not want to be a passive consumer. I wanted to make it big.',
    portfolio: 'http://montricher.com',
    github: 'https://github.com/montricher',
    twitter: 'http://www.twitter.com/deinonino',
@@ -124,32 +125,53 @@ var stringObjects = [
    github: 'https://github.com/mrwilsondj',
    twitter: '',
    email: 'mrwilsondj@gmail.com',
-   image: 'images/string/cropped/wilson.jpg'},
+   image: 'images/string/cropped/wilson.jpg'}
 ]
 
-//Create the student collection
+// Create the student collection
 
 var studentCollection;
-var studentListView;
+// var studentListView;
 
 function initializeApp(){
 
-  stringObjects = stringObjects.sort(function(a, b){
+  stringKids = stringKids.sort(function(a, b){
     return a.name.localeCompare(b.name);
   })
 
   studentCollection = new StudentCollection();
-  _.each(protoObjects, function(model){
+  _.each(stringKids, function(model){
     var studentModel = new Student(model);
     studentCollection.add(studentModel);
   })
-  studentListView = new StudentListView({collection: studentCollection, el: $('.thumbnails')});
+}
 
-  var randomStudent = _.sample(studentCollection.models);
-  var randomStudentView = new StudentView({model: randomStudent});
-  randomStudentView.renderStudentDesc();
+function loadProfile(){
+  $(".names").click(function(){
+    var currentStudent = this.id;
+    var toLoad = JSON.stringify(studentCollection.where({name: currentStudent}));
+    debugger
+    var container = $('.contentHolder');
+    container.html('');
+
+    // var profileTemplate = _.template($('#profile-template'), toLoad);
+    // container.html(profileTemplate);
+    // var loadProfile = new StudentView({model: toLoad});
+    // console.log(loadProfile);
+    // loadProfile.renderStudentDesc();
+
+  // var randomStudent = _.sample(studentCollection.models);
+  // var randomStudentView = new StudentView({model: randomStudent});
+  // randomStudentView.renderStudentDesc();
+// }
+
+
+
+
+  })
 }
 
 $(function(){
   initializeApp();
+  loadProfile();
 })
