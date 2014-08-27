@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // var StudentView = Backbone.View.extend({
 //   // template: _.template($('#headshot-template').html()),
 //   profileTemplate: _.template($('#profile-template').html()),
@@ -34,3 +35,22 @@ var StudentView = Backbone.View.extend({
   // }
 
 })
+=======
+var StudentView = Backbone.View.extend({
+    tagName: "li",
+
+    template: _.template( $("#studentTemplate").html() ),
+
+    initialize: function() {
+        this.render();
+    },
+
+    render: function() {
+        this.$el.html( this.template(this.model.toJSON()) );
+        return this;
+    }
+});
+
+var student = new Student;
+var studentView = new StudentView({ model: student});
+>>>>>>> e6846f021ea552d6fa027009c49a8689f000f67a

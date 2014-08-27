@@ -173,21 +173,6 @@ body {
 	margin-top: 10px;
 }
 
-/* large red banner */
-
-.cell_large {
-
-	height: 400px;
-	margin-top: 10px;
-/*	background-color: #A0BF27;*/
-background: #FF0030 url('../images/GA_logo3.jpg') no-repeat bottom right;
-
-}
-
-
-/*.container {
-    margin-top: 50px;
-}*/
 
 #nav {
     margin: 20px 0 0 0;
@@ -204,7 +189,7 @@ background: #FF0030 url('../images/GA_logo3.jpg') no-repeat bottom right;
 }
 
 #nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #headerImage img {
@@ -230,31 +215,74 @@ background: #FF0030 url('../images/GA_logo3.jpg') no-repeat bottom right;
 ================================================== */
 
 	/* Smaller than standard 960 (devices and browsers) */
-	@media only screen and (max-width: 959px) {}
+	@media only screen and (max-width: 959px) {
+
+	#row3, #row6 {
+			display: none;
+	}
+
+	div.sixteen.columns.cell_large.stretchRight {
+		 padding-top: 15px;
+	}
+
+	div.sixteen.columns.cell_large.stretchRight > h2, h1 {
+		margin-left: -40px;
+	}
+
+	div.sixteen.columns.cell_large.stretchRight > h1 {
+
+	font-size: 50px;
+	letter-spacing: 20px;
+	line-height: 60px;
+	margin-top: 25px;
+  }
+
+	.cell_large h2 {
+	font-size: 20px;
+	letter-spacing: 10px;
+	line-height: 10px;
+	margin-top: 35px;
+	}
+
+	}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
-	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+
+	}
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
-		#row {
+
+		#row, #row2, #row3, #row4, #row5, #row6 {
 			display: none;
 		}
-		#row2 {
-			display: none;
-		}
-		#row3 {
-			display: none;
-		}
-		#row4 {
-			display: none;
-		}
-		#row5 {
-			display: none;
-		}
-		#row6 {
-			display: none;
-		}
+
+	div.sixteen.columns.cell_large.stretchRight {
+		 width: 600px;
+		 padding-top: 15px;
+		 margin-left: -100px;
+	}
+
+
+	div.sixteen.columns.cell_large.stretchRight > h1 {
+	font-size: 30px;
+	letter-spacing: 25px;
+	line-height: 30px;
+	margin-top: 25px;
+	margin-left: 70px;
+  }
+
+/*	div.sixteen.columns.cell_large.stretchRight > h2 {
+	font-size: 20px;
+	letter-spacing: 10px;
+	line-height: 10px;
+	margin-top: 35px;
+	margin-left: 1000px;
+	}*/
+
+
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -282,6 +310,20 @@ background: #FF0030 url('../images/GA_logo3.jpg') no-repeat bottom right;
 	    font-style: normal; }
 */
 
+/* large red banner */
+
+.cell_large {
+
+	height: 400px;
+	margin-top: 10px;
+	background: #FF0030 url('../images/GA_logo3.jpg') no-repeat bottom right;
+}
+
+div.sixteen.columns.cell_large.stretchRight > h2, h1 {
+		padding-top: 5px;
+		margin-left: -75px;
+	}
+
 .cell_large h1 {
 	color: #fff;
 	font-size: 70px;
@@ -296,19 +338,14 @@ background: #FF0030 url('../images/GA_logo3.jpg') no-repeat bottom right;
 	letter-spacing: 10px;
 	line-height: 10px;
 	margin-top: 35px;
-
 }
+
+/* general styles */
 
 .extra_margin {
 	margin-top: 10px;
 }
 
-/*.logo {
-
-	width: 100%;
-	height: 100%;
-
-}*/
 
 p {
 	margin-left: 12px;
@@ -320,24 +357,14 @@ h2 {
 	margin-left: 12px;
 }
 
-/* class photos section */
+/* student names list */
 
-.student-mugs {
-/*	height: 300px;*/
-	/*margin-top: 12px;*/
-}
-
-.class-photo {
-	padding-left: 20px;
-}
-
-.projects-section {
-	height: 410px;
+a {
+	text-decoration: none;
 }
 
 h4 {
 	color: white;
-/*	text-transform: uppercase;*/
 	margin-top: -15px;
 	padding-left: 20px;
 	font-family: 'Oswald', sans-serif;
@@ -355,12 +382,113 @@ h4.alt_color2 {
 
 a:hover > h4{
 	color: #A6E22D;
-	background-color: black;
-	text-decoration: none;
+	background-color: none;
+	text-transform: uppercase;
 }
+
+/* class photos section */
+
+.class-photo {
+	margin-left: 5px;
+}
+
+.student-area {
+	background-color: #fff;
+	height: 410px;
+
+}
+
+.student-name > h1 {
+		padding: 20px 0 0 0;
+		color: #7AD0E2;
+}
+
+.student-website {
+	padding-left: 3px;
+	margin-top: -45px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.student-website > a {
+	color: #7AD0E2;
+}
+
+.student-website > a:hover {
+	color: #D7551F;
+}
+
+/* email github twitter linked in */
+
+.contact a {
+	padding: 5px 14px 5px 10px;
+	margin-top: 10px;
+	color: #A3BF27;
+	background-color: #E4E4E4;
+}
+
+.contact a:hover {
+	color: #D7551F;
+}
+
+.student-bio {
+		padding: 5px 8px 0 0;
+		color: #A3BF27;
+		clear: right;
+}
+
+a:hover > h5 {
+		color: #A3BF27;
+}
+
+.student-text > h3 {
+		padding-right: 5px;
+		color: #A3BF27;
+}
+
+
+/* projects section */
+
+.projects-section {
+	/*height: 410px;*/
+}
+
+.move-left {
+	padding-left: 10px;
+}
+
+.app-image {
+	width: 280px;
+	float: left;
+}
+
+.projects-section > div > div > h3 {
+	margin-top: 1px;
+	padding-left: 0px;
+}
+
+.projects-section > div > div > p {
+	font-size: 1em;
+	margin-top: -5px;
+}
+
+.projects-section > div > div > h3 > a:hover {
+	color: #272822;
+}
+
+.projects-section > div > div > h3 > a {
+	color: #D7551F;
+}
+
+
 
 .footer {
 	padding: 20px 0 20px 0;
+	color: #776C24;
+}
+
+.footer > h4 > a:hover {
+	color: #D7551F;
 }
 
 /*for backbone functionality*/
