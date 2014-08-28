@@ -1,4 +1,4 @@
-var stringKids = [
+var stringObjects = [
   {name: 'Andrew Wallace',
    intro: 'With a passion for technology and a desire to help others, I created my own technology consultancy company that specializes in purchasing, training, repairs, implementation, and upgrading for consumers.  As a web developer, I look forward to the next step — creating unique mobile and web software solutions.',
    portfolio: 'http://andrewgwallace.com',
@@ -19,8 +19,7 @@ var stringKids = [
    github: 'https://github.com/cbajorin',
    twitter: '',
    email: 'christopher.bajorin@gmail.com',
-   image: 'images/string/cropped/chris.jpg'
- },
+   image: 'images/string/cropped/chris.jpg'},
   {name: 'Chris Lee',
    intro: 'With a background in urban studies, I have always enjoyed engaging complex systematic problems. During my time at Warby Parker, I discovered the power of web applications and recognized programming as a place to apply my systematic thinking to interesting challenges.',
    portfolio: 'http://www.christophermarklee.com',
@@ -125,58 +124,6 @@ var stringKids = [
    github: 'https://github.com/mrwilsondj',
    twitter: 'http://twitter.com/mrwilsondj',
    email: 'mrwilsondj@gmail.com',
-<<<<<<< HEAD:javascript/app.js
-   image: 'images/string/cropped/wilson.jpg'}
-]
-
-// Create the student collection
-
-var studentCollection;
-// var studentListView;
-
-function initializeApp(){
-
-  stringKids = stringKids.sort(function(a, b){
-    return a.name.localeCompare(b.name);
-  })
-
-  studentCollection = new StudentCollection();
-  _.each(stringKids, function(model){
-    var studentModel = new Student(model);
-    studentCollection.add(studentModel);
-  })
-}
-
-function loadProfile(){
-  $(".names").click(function(){
-    var currentStudent = this.id;
-    var toLoad = JSON.stringify(studentCollection.where({name: currentStudent}));
-    debugger
-    var container = $('.contentHolder');
-    container.html('');
-
-    // var profileTemplate = _.template($('#profile-template'), toLoad);
-    // container.html(profileTemplate);
-    // var loadProfile = new StudentView({model: toLoad});
-    // console.log(loadProfile);
-    // loadProfile.renderStudentDesc();
-
-  // var randomStudent = _.sample(studentCollection.models);
-  // var randomStudentView = new StudentView({model: randomStudent});
-  // randomStudentView.renderStudentDesc();
-// }
-
-
-
-
-  })
-}
-
-$(function(){
-  initializeApp();
-  loadProfile();
-})
-=======
    image: 'images/string/cropped/wilson.jpg'},
   {name: 'Victor Rodriguez',
    intro: "",
@@ -193,4 +140,3 @@ $(function(){
    email: 'zackn9ne@gmail.com',
    image: 'images/string/cropped/zach.jpg'},
 ]
->>>>>>> e6846f021ea552d6fa027009c49a8689f000f67a:javascript/allStudents.js

@@ -490,9 +490,3 @@ a:hover > h5 {
 .footer > h4 > a:hover {
 	color: #D7551F;
 }
-
-/*for backbone functionality*/
-
-.hidden {
-  display: none;
-}
